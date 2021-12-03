@@ -1,0 +1,22 @@
+{
+  "name": "peccode-collector",
+  "version": "1.0.0",
+  "description": "Build a collector to capture data of ox",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/welllrafael/peccode-collector.git"
+  },
+  "author": "Wellington Amorim",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/welllrafael/peccode-collector/issues"
+  },
+  "homepage": "https://github.com/welllrafael/peccode-collector#readme",
+  "devDependencies": {
+    "electron": "^16.0.4"
+  }
+}
