@@ -11,7 +11,7 @@ mainWin = new BrowserWindow({
    show: false,
    webPreferences: {
     nodeIntegration: true,
-    contextIsolation: false
+    contextIsolation: false    
    },
   });
 const startURL = isDev 
@@ -27,5 +27,9 @@ mainWin.once("ready-to-show", () => mainWin.show());
    mainWin.on("closed", () => {
    mainWin = null;
   });
+
+if(isDev){
+  mainWin.webContents.openDevTools();
+}
 }
 app.on("ready", createWindow);

@@ -1,4 +1,8 @@
 export interface ITasks{
+    tasks: IAllTasks[];
+}
+
+interface IAllTasks{
     _id?: string;
-    _name?: string;
+    name?: string;
 }

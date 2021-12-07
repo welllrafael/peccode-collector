@@ -1,34 +1,47 @@
-import React, { useEffect, useState } from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
 import axios from "axios";
-
-import { ITasks } from "./app.interface";
+import {ITasks} from "./app.interface";
 
 const electron = window.require("electron");
 const ipcRenderer = electron.ipcRenderer;
 
-function App() {
-  const [task, setTasks] = useState<ITasks>();
+class App extends Component {
 
-  useEffect(()=>{
-    axios.get('http://localhost:3000/api/realmdb')
-        .then(res=>{
-            console.log("Teste")
-            let task = res.data.name;
-            setTasks({})
-        })
-        .catch(err=>{
-            console.log(err);
-        })
-},[]);
+  state = {
+    tasks: []
+  }
 
-  return (
-    <div className="Task">
-      <p>ID: {task}</p>
-      <p>Nome Tarefa: {task?._name}</p>
-    </div>
-  );
+  async componentDidMount(){
+    
+    const response = await axios.get("http://localhost:3000/api/realmdb");
+    
+    this.setState({tasks: response.data});
+
+  }
+
+  render(){
+    const {tasks}:ITasks = this.state;
+    {console.log(tasks)}
+    return(
+      <div>
+        <h1>Lista de Tarefas</h1>        
+        {tasks.map(task => (                
+          <h2>
+            <div>
+            <h2>ID: </h2>
+            {task._id}
+            </div>       
+            <div>
+            <h2>Nome: </h2>
+            {task.name}
+            </div>     
+          </h2>        
+        ))}
+      </div>
+    )
+  }
+
 }
 
 export default App;
