@@ -1,7 +1,29 @@
-const { app, BrowserWindow } = require("electron");
+const { app, BrowserWindow, autoUpdater, dialog } = require("electron");
 const isDev = require("electron-is-dev");
 const path = require("path");
+const server = 'https://your-deployment-url.com' 
+const url = `${server}/update/${process.platform}/${app.getVersion()}`  
+
+const UPDATE_CHECK_INTERVAL = 10000
+setInterval(() => {
+  autoUpdater.checkForUpdates()
+}, UPDATE_CHECK_INTERVAL)
+
+autoUpdater.setFeedURL({ url })
 require("../backend/index");
+
+autoUpdater.on('update-downloaded', (event, releaseNotes, releaseName) => {
+  const dialogOpts = {
+    type: 'info',
+    buttons: ['Restart', 'Later'],
+    title: 'Application Update',
+    message: process.platform === 'win32' ? releaseNotes : releaseName,
+    detail: 'A new version has been downloaded. Restart the application to apply the updates.'
+  }
+dialog.showMessageBox(dialogOpts).then((returnValue) => {
+    if (returnValue.response === 0) autoUpdater.quitAndInstall()
+  })
+})
 
 let mainWin;
 function createWindow() {

@@ -12,19 +12,38 @@
     "@types/node": "^12.0.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
+    "app-builder-lib": "^22.14.10",
     "axios": "^0.24.0",
+    "babel-loader": "^8.2.3",
+    "dotenv-webpack": "^7.0.3",
+    "electron-squirrel-startup": "^1.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
     "typescript": "^4.1.2",
+    "update-electron-app": "^2.0.1",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
     "start": "export BROWSER=none && react-scripts start",
     "start-electron": "export START_URL=http://localhost:3001 && electron .",
-    "build": "react-scripts build",
+    "watch": "webpack --config webpack.common.js --watch",
+    "build": "webpack --config webpack.prod.js",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "make:win": "electron-builder --win --x64",
+    "make:macos": "electron-builder --mac"
+  },
+  "electronWebpack": {
+    "commonSourceDirectory": "common",
+    "main": {
+      "sourceDirectory": "main"
+    },
+    "renderer": {
+      "sourceDirectory": null
+    }
   },
   "eslintConfig": {
     "extends": [
@@ -46,6 +65,51 @@
   },
   "devDependencies": {
     "electron": "^16.0.4",
-    "electron-is-dev": "^2.0.0"
+    "electron-is-dev": "^2.0.0",
+    "electron-winstaller": "^5.0.0",
+    "webpack-cli": "^4.9.1"
+  },
+  "build": {
+    "productName": "Pec Code",
+    "appId": "com.peccode.collector",
+    "files": [
+      "build/**/*",
+      "electron/main.js",
+      "dist/**/*",
+      "package.json"
+    ],
+    "mac": {
+      "hardenedRuntime": true,
+      "gatekeeperAssess": false
+    },
+    "dmg": {
+      "contents": [
+        {
+          "x": 130,
+          "y": 220
+        },
+        {
+          "x": 430,
+          "y": 220,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "win": {
+      "icon": "assets/images/react_app_logo.png",
+      "target": [
+        "nsis"
+      ]
+    },
+    "linux": {
+      "target": [
+        "deb",
+        "rpm",
+        "AppImage"
+      ],
+      "category": "Development"
+    },
+    "extends": null
   }
 }

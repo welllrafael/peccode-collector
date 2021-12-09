@@ -1,7 +1,4 @@
-import React, { Component } from 'react';
-import './App.css';
-import axios from "axios";
-import {ITasks} from "./app.interface";
+import { Component } from 'react';
 
 const electron = window.require("electron");
 const ipcRenderer = electron.ipcRenderer;
@@ -23,24 +20,21 @@ class App extends Component {
 
   }
 
-  render(){
-    const {tasks} : ITasks = this.state;
-    {console.log(tasks)}
+  render(){        
     return(
       <div>
         <h1>Lista de Tarefas</h1>        
-        {tasks.map(task => (                
+        
           <h2>
             <div>
             <h2>ID: </h2>
-            {task._id}
+            000001
             </div>       
             <div>
             <h2>Nome: </h2>
-            {task.name}
+            VinU
             </div>     
-          </h2>        
-        ))}
+          </h2>                
       </div>
     )
   }
