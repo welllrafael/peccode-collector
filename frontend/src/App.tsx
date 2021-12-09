@@ -9,19 +9,22 @@ const ipcRenderer = electron.ipcRenderer;
 class App extends Component {
 
   state = {
-    tasks: []
+    tasks: [{
+      _id: "Teste",
+      name: "Tarefa"
+    }]
   }
 
   async componentDidMount(){
     
-    const response = await axios.get("http://localhost:3000/api/realmdb");
+    //const response = await axios.get("http://localhost:3000/api/realmdb");
     
-    this.setState({tasks: response.data});
+    this.setState({tasks: this.state.tasks});
 
   }
 
   render(){
-    const {tasks}:ITasks = this.state;
+    const {tasks} : ITasks = this.state;
     {console.log(tasks)}
     return(
       <div>
