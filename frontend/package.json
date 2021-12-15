@@ -1,84 +1,36 @@
 {
-  "name": "frontend",
-  "version": "0.1.0",
-  "private": true,
-  "title": "App",
-  "main": "electron/main.js",
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "@types/jest": "^26.0.15",
-    "@types/node": "^12.0.0",
-    "@types/react": "^17.0.0",
-    "@types/react-dom": "^17.0.0",
-    "app-builder-lib": "^22.14.10",
-    "axios": "^0.24.0",
-    "babel-loader": "^8.2.3",
-    "dotenv-webpack": "^7.0.3",
-    "electron-is-dev": "^2.0.0",
-    "electron-squirrel-startup": "^1.0.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3",
-    "typescript": "^4.1.2",
-    "update-electron-app": "^2.0.1",
-    "web-vitals": "^1.0.1"
-  },
+  "name": "peccode-collector",
+  "version": "1.0.0",
+  "description": "To collect Ox's data",
+  "main": "main.js",
   "scripts": {
-    "start": "export BROWSER=none && react-scripts start",
-    "start-electron": "export START_URL=http://localhost:3001 && electron .",
+    "start": "electron .",
     "watch": "webpack --config webpack.common.js --watch",
     "build": "webpack --config webpack.prod.js",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
     "pack": "electron-builder --dir",
     "dist": "electron-builder",
-    "make:win": "electron-builder --win --x64",
-    "make:macos": "electron-builder --mac"
+    "make:linux": "electron-builder --linux",
+    "make:macos": "electron-builder --mac",
+    "make:win": "electron-builder --win --x64"
   },
-  "electronWebpack": {
-    "commonSourceDirectory": "common",
-    "main": {
-      "sourceDirectory": "main"
-    },
-    "renderer": {
-      "sourceDirectory": null
-    }
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "electron": "^16.0.4",
-    "electron-winstaller": "^5.0.0",
-    "webpack-cli": "^4.9.1"
-  },
+  "author": "Wellington Amorim",
+  "license": "ISC",
   "build": {
-    "productName": "Pec Code",
+    "productName": "Collector PecCode",
     "appId": "com.peccode.collector",
     "files": [
       "build/**/*",
-      "electron/main.js",
-      "dist/**/*",
-      "package.json"
+      "assets/**/*",
+      "utils/**/*",
+      "index.html",
+      "splash.html",
+      "splash.css",
+      "main.js",
+      "preload.js"
     ],
     "mac": {
+      "category": "public.app-category.developer-tools",
+      "icon": "assets/images/react_app_logo.png",
       "hardenedRuntime": true,
       "gatekeeperAssess": false
     },
@@ -89,7 +41,7 @@
           "y": 220
         },
         {
-          "x": 430,
+          "x": 810,
           "y": 220,
           "type": "link",
           "path": "/Applications"
@@ -109,7 +61,26 @@
         "AppImage"
       ],
       "category": "Development"
-    },
-    "extends": null
+    }
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "electron": "^16.0.4",
+    "electron-builder": "^22.14.5",
+    "electron-reload": "^2.0.0-alpha.1",
+    "webpack-merge": "^5.8.0"
+  },
+  "dependencies": {
+    "@babel/preset-env": "^7.16.4",
+    "@babel/preset-react": "^7.16.0",
+    "babel-loader": "^8.2.3",
+    "css-loader": "^6.5.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "sass": "^1.45.0",
+    "sass-loader": "^12.4.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1"
   }
 }
