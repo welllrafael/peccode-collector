@@ -1,14 +1,15 @@
+import { IAreaRepository } from './IAreaRepository.interface';
 import { Injectable } from "@nestjs/common";
-import { Task } from "./model/users.model"
+import { Task } from "../../../backend_copy/src/model/users.model"
 import { ObjectId } from "bson";
-import { ConnectRealmDB}  from "./connect/connect.service"
+import { ConnectRealmDB}  from "../../../backend_copy/src/connect/connect.service"
 
 @Injectable()
-export class AppService {
+export class AreaRepository implements IAreaRepository {
 
-	constructor(private connectRealmDB: ConnectRealmDB) {}
+	constructor() {}
 
-	async getTasks(): Promise<string> {
+	async getArea(): Promise<string> {
 
 		try {
 			const realm: Realm = await this.connectRealmDB.getConnectionRealm();
@@ -25,7 +26,7 @@ export class AppService {
 		}
 	}
 
-	async sendTasks(): Promise<string> {
+	async postArea(): Promise<string> {
 
 		try {
 			const realm: Realm = await this.connectRealmDB.getConnectionRealm();
@@ -53,7 +54,7 @@ export class AppService {
 		}
 	}
 
-	async updateTask(): Promise<string> {
+	async putArea(): Promise<string> {
 
 		try {
 			const realm: Realm = await this.connectRealmDB.getConnectionRealm();
@@ -79,7 +80,7 @@ export class AppService {
 		}
 	}
 
-	async deleteTask(): Promise<string> {
+	async deleteArea(): Promise<string> {
 
 		try {
 			const realm: Realm = await this.connectRealmDB.getConnectionRealm();
