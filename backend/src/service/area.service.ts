@@ -1,23 +1,39 @@
 import { Injectable } from '@nestjs/common';
-import { Object } from 'realm';
 import { AreaFactory } from '../factory/area.factory';
 
 @Injectable()
 export class AreaService {
     constructor() {}
 
-	getArea(): void {}
+	async getArea(): Promise<string> {
 
-	postArea(): void {
-		if(true){
-			var teste: object;
-			var factory = new AreaFactory();
-			var area = factory.create(teste);
-			area.postArea();			
-		}
+		let payloadArea: object;
+		let factory = new AreaFactory();
+		let area = factory.create(payloadArea);
+		return await area.getArea();					
 	}
 
-	putArea(): void {}
+	async postArea(): Promise<string> {		
 
-	deleteArea(): void {}
+		let payloadArea: object;
+		let factory = new AreaFactory();
+		let area = factory.create(payloadArea);
+		return await area.postArea();					
+	}
+
+	async putArea(): Promise<string> {
+
+		let payloadArea: object;
+		let factory = new AreaFactory();
+		let area = factory.create(payloadArea);
+		return await area.putArea();					
+	}
+
+	async deleteArea(): Promise<string> {
+
+		let payloadArea: object;
+		let factory = new AreaFactory();
+		let area = factory.create(payloadArea);
+		return await area.deleteArea();					
+	}
 }

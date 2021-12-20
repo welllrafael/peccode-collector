@@ -1,22 +1,20 @@
-import { AreaModule } from './../area.module';
+import { AreaModule } from '../../src/module/area.module';
 import { INestApplication } from "@nestjs/common";
 import { Test } from "@nestjs/testing";
-import { ConnectRealmDB } from '../../src/database/area.database';
 import { AreaTest } from './databaseMock/area';
 import { ObjectId } from "bson";
-
+import { AreaRepository } from "../../src/repository/area.repository"
 
 describe('CRUD Area', () => {        
     let app:INestApplication;    
     let realmDBTest: Realm;
-    let objectRealm: ConnectRealmDB;
+    let objectRealm: AreaRepository;
   
     beforeAll(async () => {
         const moduleRef = await Test.createTestingModule({
             imports: [AreaModule]
       }).compile();
-          
-        objectRealm = new ConnectRealmDB();    
+                  
         realmDBTest = await objectRealm.getConnectionRealm();
 
         app = moduleRef.createNestApplication();
@@ -33,7 +31,7 @@ describe('CRUD Area', () => {
   
     it('/POST Area', async () => {
         
-        await objectRealm.deleteAll(realmDBTest);
+        await objectRealm.deleteArea();
 
         expect(realmDBTest.objects("AreaTest").length).toEqual(0);
 
@@ -69,7 +67,7 @@ describe('CRUD Area', () => {
     });
     
     it('/DELETE Area', async () => {        
-        await objectRealm.deleteAll(realmDBTest);
+        await objectRealm.deleteArea();
 
         expect(realmDBTest.objects("AreaTest").length).toEqual(0);
     });

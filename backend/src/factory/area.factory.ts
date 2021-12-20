@@ -4,10 +4,10 @@ import { AreaRepository } from 'src/repository/area.repository';
 import { GenericFactory } from './generic.factory';
 
 @Injectable()
-export class AreaFactory implements GenericFactory<IAreaRepository> {
+export class AreaFactory extends GenericFactory<IAreaRepository> {
 
     create(value: object): AreaRepository {
-        throw new Error('Method not implemented.');
+        return new AreaRepository();
     }
 
 }

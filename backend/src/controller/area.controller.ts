@@ -6,22 +6,22 @@ export class AreaController {
   constructor(private readonly appService: AreaService) {}
 
   @Get()
-  async getAllArea(): Promise<void> {
+  async getAllArea(): Promise<string> {
     return await this.appService.getArea();
   }
 
   @Post()
-  async postAllArea(): Promise<void> {
+  async postAllArea(): Promise<string> {
     return await this.appService.postArea();
   }
 
   @Put()
-  async putAllArea(): Promise<void> {
+  async putAllArea(): Promise<string> {
     return await this.appService.putArea();
   }
 
   @Delete()
-  async deleteAllArea(): Promise<void> {
+  async deleteAllArea(): Promise<string> {
     return await this.appService.deleteArea();
   }
 }

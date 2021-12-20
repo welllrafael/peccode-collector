@@ -1,23 +1,21 @@
 import { IAreaRepository } from './IAreaRepository.interface';
 import { Injectable } from "@nestjs/common";
-import { Area } from "../model/area.model"
+import { Area } from "../entities/area.entities"
 import { ObjectId } from "bson";
-import { ConnectRealmDB}  from "../database/area.database"
+import { GenericRepository } from './generic.repository';
 
 @Injectable()
-export class AreaRepository implements IAreaRepository {
-
-	constructor(private connectRealmDB: ConnectRealmDB) {}
+export class AreaRepository extends GenericRepository implements IAreaRepository {	
 
 	async getArea(): Promise<string> {
-
+		
 		try {
-			const realm: Realm = await this.connectRealmDB.getConnectionRealm();
+			const realm: Realm = await super.getConnectionRealm();
 
 			const areas = realm.objects<Area>("Area");			
 			const results = JSON.stringify(areas.sorted("name"), null, 2);
 
-			this.connectRealmDB.closeConnectionRealm();
+			super.closeConnectionRealm();
 			
 			return results;
 		} catch (error) {
@@ -28,22 +26,22 @@ export class AreaRepository implements IAreaRepository {
 	async postArea(): Promise<string> {
 
 		try {
-			const realm: Realm = await this.connectRealmDB.getConnectionRealm();
+			const realm: Realm = await super.getConnectionRealm();
 
 			realm.write(() => {
-				const task1 = realm.create<Area>("Area", {
+				const createArea1 = realm.create<Area>("Area", {
 				  _id: new ObjectId(),
-				  name: "Tarefa 1",
-				  size: "Open",
+				  name: "Area 1",
+				  size: "100",
 				});
-				const task2 = realm.create<Area>("Area", {
+				const createArea2 = realm.create<Area>("Area", {
 				  _id: new ObjectId(),
-				  name: "Tarefa 2",
-				  size: "Busy",
+				  name: "Area 2",
+				  size: "200",
 				});				
 			  });	
 			  
-			  this.connectRealmDB.closeConnectionRealm();
+			  super.closeConnectionRealm();
 
 			  return `Criadas duas tarefas`;
 		} catch (error) {
@@ -54,22 +52,22 @@ export class AreaRepository implements IAreaRepository {
 	async putArea(): Promise<string> {
 
 		try {
-			const realm: Realm = await this.connectRealmDB.getConnectionRealm();
+			const realm: Realm = await super.getConnectionRealm();
 
 			const area = realm.objects<Area>("Area");
-			const someArea = area.filtered("status <> ''")[0];
+			const someArea = area.filtered("size > '0'")[0];
 	
 			if(!!someArea){
 				realm.write(() => {
 					someArea.size = 'InProgress';				
 				});			
 	
-				this.connectRealmDB.closeConnectionRealm();
+				super.closeConnectionRealm();
 	
-				return `Status alterado das tarefas`;
+				return `Tamanho alterado das tarefas`;
 			}
 
-			return `Tarefas sem status para alteração`;
+			return `Tarefas sem tamanho para alteração`;
 
 		} catch (error) {
 			return error.message;
@@ -79,13 +77,13 @@ export class AreaRepository implements IAreaRepository {
 	async deleteArea(): Promise<string> {
 
 		try {
-			const realm: Realm = await this.connectRealmDB.getConnectionRealm();
+			const realm: Realm = await super.getConnectionRealm();
 
 			realm.write(() => {	
 				realm.delete(realm.objects("Area"));				
 			});			
 
-			this.connectRealmDB.closeConnectionRealm();
+			super.closeConnectionRealm();
 
 			return `Tarefas deletadas`;
 		

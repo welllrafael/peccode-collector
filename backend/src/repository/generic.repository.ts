@@ -1,9 +1,9 @@
-import { AreaTestSchema } from '../../test/area/databaseMock/area';
+import { AreaSchema } from './../entities/area.entities';
 import { Injectable } from "@nestjs/common";
 import * as Realm from "realm";
 
 @Injectable()
-export class ConnectRealmDB {
+export class GenericRepository {
 
     private realm: Realm;
 
@@ -15,8 +15,12 @@ export class ConnectRealmDB {
 		const credentials = Realm.Credentials.anonymous();
 
         try {                    
+
+            //Caso o usuário esteja conectado, ele encerra a conexão
+            app.currentUser?.logOut();
+
             await app.logIn(credentials);
-    
+
             return await this.openConnectionRealm(app);            
         } catch (error) {
             return error.message;
@@ -38,7 +42,7 @@ export class ConnectRealmDB {
     async openConnectionRealm(app: Realm.App): Promise<Realm> {
 
         this.realm = await Realm.open({
-            schema: [AreaTestSchema],
+            schema: [AreaSchema],
             sync: {
               user: app.currentUser as Realm.User,
               partitionValue: "coletorAreaTeste"                
