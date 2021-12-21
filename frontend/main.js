@@ -1,6 +1,6 @@
 
 // Main Process
-const { app, BrowserWindow, ipcMain, Notification } = require('electron');
+const { app, BrowserWindow, ipcMain, Notification, autoUpdater, dialog } = require('electron');
 const path = require('path');
 const isDev = !app.isPackaged;
 
@@ -19,13 +19,45 @@ function createWindow() {
 
   win.loadFile('index.html')
   isDev && win.webContents.openDevTools();
+
+  if (isDev) {
+    const server = 'https://your-deployment-url.com'
+    const url = `${server}/update/${process.platform}/${app.getVersion()}`
+
+    autoUpdater.setFeedURL({ url })
+    console.log(url);
+  }
 }
 
 if (isDev) {
   require('electron-reload')(__dirname, {
     electron: path.join(__dirname, 'node_modules', '.bin', 'electron')
   })
+
 }
+
+setInterval(() => {
+  autoUpdater.checkForUpdates()
+}, 15000);
+
+autoUpdater.on('update-downloaded', (event, releaseNotes, releaseName) => {
+  const dialogOpts = {
+    type: 'info',
+    buttons: ['Restart', 'Later'],
+    title: 'Application Update',
+    message: process.platform === 'win32' ? releaseNotes : releaseName,
+    detail: 'A new version has been downloaded. Restart the application to apply the updates.'
+  }
+
+  dialog.showMessageBox(dialogOpts).then((returnValue) => {
+    if (returnValue.response === 0) autoUpdater.quitAndInstall()
+  })
+});
+
+autoUpdater.on('error', message => {
+  console.error('There was a problem updating the application')
+  console.error(message)
+});
 
 app.whenReady().then(createWindow);
 

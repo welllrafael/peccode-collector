@@ -11,10 +11,17 @@ export default function App() {
       .sendNotification('Data Collect!');
   }
 
+  const sendHelloWorld = () => {
+    electron
+      .notificationApi
+      .sendNotification('Update Connection...')
+  }
+
   return (
     <>
       <h1>{enhancedTitle}</h1>
       <button onClick={sendNotification}>Send Notification</button>
+      <button onClick={sendHelloWorld}>Send 2 Notification</button>
     </>
   )
 }
