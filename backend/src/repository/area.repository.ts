@@ -1,6 +1,6 @@
 import { DeleteAreaDTO, PostAreaDTO, PutAreaDTO } from './../DTO/area.dto';
 import { IAreaRepository } from './IAreaRepository.interface';
-import { Injectable } from "@nestjs/common";
+import { HttpException, Injectable } from "@nestjs/common";
 import { Area } from "../entities/area.entities"
 import { ObjectId } from "bson";
 import { GenericRepository } from './generic.repository';
@@ -20,7 +20,7 @@ export class AreaRepository extends GenericRepository implements IAreaRepository
 			
 			return results;
 		} catch (error) {
-			throw new error.message;
+			throw new HttpException(error.message, error.code);
 		}
 	}
 
@@ -41,7 +41,7 @@ export class AreaRepository extends GenericRepository implements IAreaRepository
 
 			  return `Tarefa criada com sucesso!`;
 		} catch (error) {
-			throw new error.message;
+			throw new HttpException(error.message, error.code);
 		}
 	}
 
@@ -67,7 +67,7 @@ export class AreaRepository extends GenericRepository implements IAreaRepository
 			return `Nenhum registro alterado!`;
 
 		} catch (error) {
-			throw new error.message;
+			throw new HttpException(error.message, error.code);
 		}
 	}
 
@@ -87,7 +87,7 @@ export class AreaRepository extends GenericRepository implements IAreaRepository
 			return `Tarefa deletada com sucesso!`;
 		
 		} catch (error) {
-			throw new error.message;
+			throw new HttpException(error.message, error.code);
 		}				
 	}
 
@@ -105,7 +105,7 @@ export class AreaRepository extends GenericRepository implements IAreaRepository
 			return `Tarefas deletadas com sucesso!`;
 		
 		} catch (error) {
-			throw new error.message;
+			throw new HttpException(error.message, error.code);
 		}				
 	}
 }
