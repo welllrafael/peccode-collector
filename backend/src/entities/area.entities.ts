@@ -4,7 +4,7 @@ export type Area = {
 	_id: BSON.ObjectId;
 	_partition?: string;
 	name: string;
-	size: string;
+	size: number;
 };
 
 export const AreaSchema = {
@@ -13,7 +13,7 @@ export const AreaSchema = {
 		_id: 'objectId',
 		_partition: 'string?',
 		name: 'string',
-		size: 'string'
+		size: 'number'
 	},
 	primaryKey: '_id'
 };

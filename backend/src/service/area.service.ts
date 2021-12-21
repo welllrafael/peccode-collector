@@ -1,3 +1,4 @@
+import { PostAreaDTO, PutAreaDTO, DeleteAreaDTO } from './../DTO/area.dto';
 import { Injectable } from '@nestjs/common';
 import { AreaFactory } from '../factory/area.factory';
 
@@ -5,35 +6,35 @@ import { AreaFactory } from '../factory/area.factory';
 export class AreaService {
     constructor() {}
 
-	async getArea(): Promise<string> {
+	async getAreaById(areaId: string): Promise<string> {
 
 		let payloadArea: object;
 		let factory = new AreaFactory();
 		let area = factory.create(payloadArea);
-		return await area.getArea();					
+		return await area.getAreaById(areaId);					
 	}
 
-	async postArea(): Promise<string> {		
+	async postAreaById(postAreaDTO: PostAreaDTO): Promise<string> {		
 
 		let payloadArea: object;
 		let factory = new AreaFactory();
 		let area = factory.create(payloadArea);
-		return await area.postArea();					
+		return await area.postAreaById(postAreaDTO);					
 	}
 
-	async putArea(): Promise<string> {
+	async putAreaById(putAreaDTO: PutAreaDTO): Promise<string> {
 
 		let payloadArea: object;
 		let factory = new AreaFactory();
 		let area = factory.create(payloadArea);
-		return await area.putArea();					
+		return await area.putAreaById(putAreaDTO);					
 	}
 
-	async deleteArea(): Promise<string> {
+	async deleteAreaById(deleteAreaDTO: DeleteAreaDTO): Promise<string> {
 
 		let payloadArea: object;
 		let factory = new AreaFactory();
 		let area = factory.create(payloadArea);
-		return await area.deleteArea();					
+		return await area.deleteAreaById(deleteAreaDTO);					
 	}
 }

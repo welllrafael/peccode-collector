@@ -1,3 +1,4 @@
+import { DeleteAreaDTO, PostAreaDTO, PutAreaDTO } from './../DTO/area.dto';
 import { IAreaRepository } from './IAreaRepository.interface';
 import { Injectable } from "@nestjs/common";
 import { Area } from "../entities/area.entities"
@@ -7,13 +8,13 @@ import { GenericRepository } from './generic.repository';
 @Injectable()
 export class AreaRepository extends GenericRepository implements IAreaRepository {	
 
-	async getArea(): Promise<string> {
+	async getAreaById(areaId: string): Promise<string> {
 		
 		try {
 			const realm: Realm = await super.getConnectionRealm();
 
 			const areas = realm.objects<Area>("Area");			
-			const results = JSON.stringify(areas.sorted("name"), null, 2);
+			const results = JSON.stringify(areas.sorted("_id = '" + areaId + "'"), null, 2);
 
 			super.closeConnectionRealm();
 			
@@ -23,7 +24,7 @@ export class AreaRepository extends GenericRepository implements IAreaRepository
 		}
 	}
 
-	async postArea(): Promise<string> {
+	async postAreaById(postAreaDTO: PostAreaDTO): Promise<string> {
 
 		try {
 			const realm: Realm = await super.getConnectionRealm();
@@ -31,61 +32,59 @@ export class AreaRepository extends GenericRepository implements IAreaRepository
 			realm.write(() => {
 				const createArea1 = realm.create<Area>("Area", {
 				  _id: new ObjectId(),
-				  name: "Area 1",
-				  size: "100",
+				  name: postAreaDTO.nameArea,
+				  size: postAreaDTO.sizeArea,
 				});
-				const createArea2 = realm.create<Area>("Area", {
-				  _id: new ObjectId(),
-				  name: "Area 2",
-				  size: "200",
-				});				
 			  });	
 			  
 			  super.closeConnectionRealm();
 
-			  return `Criadas duas tarefas`;
+			  return `Tarefa criada com sucesso!`;
 		} catch (error) {
 			return error.message;
 		}
 	}
 
-	async putArea(): Promise<string> {
+	async putAreaById(putAreaDTO: PutAreaDTO): Promise<string> {
 
 		try {
 			const realm: Realm = await super.getConnectionRealm();
 
 			const area = realm.objects<Area>("Area");
-			const someArea = area.filtered("size > '0'")[0];
+			const someArea = area.filtered("_id = '" + putAreaDTO.areaID + "'")[0];
 	
 			if(!!someArea){
 				realm.write(() => {
-					someArea.size = 'InProgress';				
+					someArea.name = putAreaDTO.nameArea;				
+					someArea.size = putAreaDTO.sizeArea;				
 				});			
 	
 				super.closeConnectionRealm();
 	
-				return `Tamanho alterado das tarefas`;
+				return `Dados alterados com sucesso!`;
 			}
 
-			return `Tarefas sem tamanho para alteração`;
+			return `Nenhum registro alterado!`;
 
 		} catch (error) {
 			return error.message;
 		}
 	}
 
-	async deleteArea(): Promise<string> {
+	async deleteAreaById(deleteAreaDTO: DeleteAreaDTO): Promise<string> {
 
 		try {
 			const realm: Realm = await super.getConnectionRealm();
+			const area = realm.objects<Area>("Area");
+			const someArea = area.filtered("_id = '" + deleteAreaDTO.areaID + "'")[0];
 
 			realm.write(() => {	
-				realm.delete(realm.objects("Area"));				
+				realm.delete(someArea);				
 			});			
 
 			super.closeConnectionRealm();
 
-			return `Tarefas deletadas`;
+			return `Tarefa deletada com sucesso!`;
 		
 		} catch (error) {
 			return error.message;
