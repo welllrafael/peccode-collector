@@ -20,7 +20,7 @@ export class AreaRepository extends GenericRepository implements IAreaRepository
 			
 			return results;
 		} catch (error) {
-			return error.message;
+			throw new error.message;
 		}
 	}
 
@@ -41,7 +41,7 @@ export class AreaRepository extends GenericRepository implements IAreaRepository
 
 			  return `Tarefa criada com sucesso!`;
 		} catch (error) {
-			return error.message;
+			throw new error.message;
 		}
 	}
 
@@ -67,7 +67,7 @@ export class AreaRepository extends GenericRepository implements IAreaRepository
 			return `Nenhum registro alterado!`;
 
 		} catch (error) {
-			return error.message;
+			throw new error.message;
 		}
 	}
 
@@ -87,7 +87,7 @@ export class AreaRepository extends GenericRepository implements IAreaRepository
 			return `Tarefa deletada com sucesso!`;
 		
 		} catch (error) {
-			return error.message;
+			throw new error.message;
 		}				
 	}
 
@@ -105,7 +105,7 @@ export class AreaRepository extends GenericRepository implements IAreaRepository
 			return `Tarefas deletadas com sucesso!`;
 		
 		} catch (error) {
-			return error.message;
+			throw new error.message;
 		}				
 	}
 }
