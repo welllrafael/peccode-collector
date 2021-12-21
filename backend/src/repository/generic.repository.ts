@@ -1,5 +1,5 @@
 import { AreaSchema } from './../entities/area.entities';
-import { Injectable } from "@nestjs/common";
+import { HttpException, Injectable } from "@nestjs/common";
 import * as Realm from "realm";
 
 @Injectable()
@@ -23,7 +23,7 @@ export class GenericRepository {
 
             return await this.openConnectionRealm(app);            
         } catch (error) {
-            return error.message;
+            throw new HttpException(error.message, error.code);
         }
     }
 
