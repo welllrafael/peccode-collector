@@ -13,7 +13,7 @@ export const AreaSchema = {
 		_id: 'objectId',
 		_partition: 'string?',
 		name: 'string',
-		size: 'number'
+		size: 'double'
 	},
 	primaryKey: '_id'
 };
