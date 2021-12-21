@@ -90,4 +90,22 @@ export class AreaRepository extends GenericRepository implements IAreaRepository
 			return error.message;
 		}				
 	}
+
+	async deleteAllArea(): Promise<string> {
+
+		try {
+			const realm: Realm = await super.getConnectionRealm();
+
+			realm.write(() => {	
+				realm.delete(realm.objects("Area"));				
+			});			
+
+			super.closeConnectionRealm();
+
+			return `Tarefas deletadas com sucesso!`;
+		
+		} catch (error) {
+			return error.message;
+		}				
+	}
 }

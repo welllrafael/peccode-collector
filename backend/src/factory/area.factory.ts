@@ -6,7 +6,7 @@ import { GenericFactory } from './generic.factory';
 @Injectable()
 export class AreaFactory extends GenericFactory<IAreaRepository> {
 
-    create(value: object): AreaRepository {
+    create(): AreaRepository {
         return new AreaRepository();
     }
 

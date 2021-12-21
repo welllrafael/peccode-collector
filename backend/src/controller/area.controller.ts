@@ -25,4 +25,9 @@ export class AreaController {
   async deleteAreaById(@Body() deleteAreaDTO: DeleteAreaDTO): Promise<string> {
     return await this.appService.deleteAreaById(deleteAreaDTO);
   }
+
+  @Delete()
+  async deleteAllArea(): Promise<string> {
+    return await this.appService.deleteAllArea();
+  }
 }

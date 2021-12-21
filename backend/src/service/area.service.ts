@@ -7,34 +7,37 @@ export class AreaService {
     constructor() {}
 
 	async getAreaById(areaId: string): Promise<string> {
-
-		let payloadArea: object;
+	
 		let factory = new AreaFactory();
-		let area = factory.create(payloadArea);
+		let area = factory.create();
 		return await area.getAreaById(areaId);					
 	}
 
 	async postAreaById(postAreaDTO: PostAreaDTO): Promise<string> {		
 
-		let payloadArea: object;
 		let factory = new AreaFactory();
-		let area = factory.create(payloadArea);
+		let area = factory.create();
 		return await area.postAreaById(postAreaDTO);					
 	}
 
 	async putAreaById(putAreaDTO: PutAreaDTO): Promise<string> {
 
-		let payloadArea: object;
 		let factory = new AreaFactory();
-		let area = factory.create(payloadArea);
+		let area = factory.create();
 		return await area.putAreaById(putAreaDTO);					
 	}
 
 	async deleteAreaById(deleteAreaDTO: DeleteAreaDTO): Promise<string> {
-
-		let payloadArea: object;
+		
 		let factory = new AreaFactory();
-		let area = factory.create(payloadArea);
+		let area = factory.create();
 		return await area.deleteAreaById(deleteAreaDTO);					
 	}
+
+	async deleteAllArea(): Promise<string> {
+		
+		let factory = new AreaFactory();
+		let area = factory.create();
+		return await area.deleteAllArea();					
+	}	
 }
