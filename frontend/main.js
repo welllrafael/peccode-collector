@@ -21,8 +21,9 @@ function createWindow() {
   isDev && win.webContents.openDevTools();
 
   if (isDev) {
-    const server = 'https://your-deployment-url.com'
-    const url = `${server}/update/${process.platform}/${app.getVersion()}`
+    // const server = 'https://your-deployment-url.com'
+    // const url = `${server}/update/${process.platform}/${app.getVersion()}`
+    const url = 'https://github.com/welllrafael/peccode-collector/releases/tag/update'
 
     autoUpdater.setFeedURL({ url })
     console.log(url);
