@@ -14,7 +14,7 @@ export default function App() {
   const sendHelloWorld = () => {
     electron
       .notificationApi
-      .sendNotification('Update Connection...')
+      .sendNotification('AutoUpdate Connection...')
   }
 
   return (
