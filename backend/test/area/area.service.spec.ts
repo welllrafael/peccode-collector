@@ -1,75 +1,45 @@
 import { AreaModule } from '../../src/module/area.module';
-import { INestApplication } from "@nestjs/common";
-import { Test } from "@nestjs/testing";
+import { INestApplication } from '@nestjs/common';
+import { Test } from '@nestjs/testing';
 import { AreaTest } from './databaseMock/area';
-import { ObjectId } from "bson";
-import { AreaRepository } from "../../src/repository/area.repository"
+import { ObjectId } from 'bson';
+import { AreaRepository } from '../../src/repository/area.repository'
+import { AreaRepositoryMock } from './__mock__/AreaRepositoryMock';
 
-describe('CRUD Area', () => {        
+describe('Test Realm Service', () => {
+
     let app:INestApplication;    
-    let realmDBTest: Realm;
-    let objectRealm: AreaRepository;
-  
+    let areaRepository: AreaRepository;
+
     beforeAll(async () => {
+        const ApiServiceProvider = {
+            provide: AreaRepository,
+            useClass: AreaRepositoryMock
+        };
+
         const moduleRef = await Test.createTestingModule({
-            imports: [AreaModule]
-      }).compile();
-                  
-        realmDBTest = await objectRealm.getConnectionRealm();
+            providers: [AreaRepository, ApiServiceProvider]        
+      }).compile();                        
 
-        app = moduleRef.createNestApplication();
-        
+        app = moduleRef.createNestApplication();        
         await app.init();
-    })
-    
-    afterAll(async () => {
-            
-        await objectRealm.closeConnectionRealm();
 
-        await app.close();        
+        areaRepository = moduleRef.get<AreaRepository>(AreaRepository);
     })
-  
-    it('/POST Area', async () => {
+
+    describe('CRUD Area', () => {
         
-        await objectRealm.deleteArea();
+        it('Should be get data in RealmDB', async () => {
+            
+            const idArea: string = '61c4e4551cd81b4dbf8ee1e3';
 
-        expect(realmDBTest.objects("AreaTest").length).toEqual(0);
+            const areaRepositoryResponse = await areaRepository.getAreaById(idArea);
 
-        realmDBTest.write(() => {
-            const area1 = realmDBTest.create<AreaTest>("AreaTest", {
-              _id: new ObjectId(),
-              name: "Area 1",
-              size: "100",
-            });
-          });                
+            jest.spyOn(areaRepository, 'getAreaById').mockImplementation(() => Promise.resolve(areaRepositoryResponse).then());
 
-        expect(realmDBTest.objects("AreaTest").length).toEqual(1);
+            expect(areaRepositoryResponse).toHaveProperty('_id');
+            expect(areaRepositoryResponse).toHaveProperty('name');
+            expect(areaRepositoryResponse).toHaveProperty('size');
+        })
     });
-
-    it('/GET Area', async () => {            
-			const area = realmDBTest.objects<AreaTest>("AreaTest");			
-			const results = JSON.stringify(area.sorted("name"), null, 2);
-
-      expect(results.length).toBeGreaterThan(0);
-    });
-
-    it('/PUT Area', async () => {        
-        const area = realmDBTest.objects<AreaTest>("AreaTest");
-        const someTask = area.filtered("name == 'Area 1'")[0];
-
-        if(someTask){
-            realmDBTest.write(() => {
-                someTask.name = "Area Updated";				
-            });			                                    
-        }    
-
-        expect(someTask.name).toBe("Area Updated");
-    });
-    
-    it('/DELETE Area', async () => {        
-        await objectRealm.deleteArea();
-
-        expect(realmDBTest.objects("AreaTest").length).toEqual(0);
-    });
-
-})
+});

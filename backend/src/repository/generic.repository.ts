@@ -45,7 +45,7 @@ export class GenericRepository {
             schema: [AreaSchema],
             sync: {
               user: app.currentUser as Realm.User,
-              partitionValue: "coletorAreaTeste"                
+              partitionValue: "coletorArea"                
             },
         });
 
