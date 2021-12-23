@@ -1,12 +1,13 @@
 {
   "name": "peccode-collector",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "To collect Ox's data",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
     "watch": "webpack --config webpack.common.js --watch",
     "build": "webpack --config webpack.prod.js",
+    "buildapp" : "set GH_TOKEN=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 && electron-builder -p always",
     "pack": "electron-builder --dir",
     "dist": "electron-builder",
     "make:linux": "electron-builder --linux",
@@ -28,6 +29,11 @@
       "main.js",
       "preload.js"
     ],
+    "publish": [{
+      "provider": "github",
+      "owner": "welllrafael",
+      "repo": "peccode-collector"
+    }],
     "mac": {
       "category": "public.app-category.developer-tools",
       "icon": "assets/images/react_app_logo.png",
@@ -75,6 +81,8 @@
     "@babel/preset-react": "^7.16.0",
     "babel-loader": "^8.2.3",
     "css-loader": "^6.5.1",
+    "electron-log": "^4.4.3",
+    "electron-updater": "^4.6.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "sass": "^1.45.0",
