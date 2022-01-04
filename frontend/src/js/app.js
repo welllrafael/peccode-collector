@@ -17,11 +17,18 @@ export default function App() {
       .sendNotification('AutoUpdate Connection...')
   }
 
+  const sendHelloWorld2 = () => {
+    electron
+      .notificationApi
+      .sendNotification('Show to Customer...')
+  }
+
   return (
     <>
       <h1>{enhancedTitle}</h1>
       <button onClick={sendNotification}>Send Notification</button>
       <button onClick={sendHelloWorld}>Send 2 Notification</button>
+      <button onClick={sendHelloWorld2}>Send 3 Notification</button>
     </>
   )
 }
