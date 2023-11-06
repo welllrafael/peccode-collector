@@ -1,2 +1,2 @@
-# peccode-collector
-Build a collector to capture data of ox
+# data-collector-electron
+Coletor de dados para o curral

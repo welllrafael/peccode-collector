@@ -1,0 +1,866 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing AreaAddEdit Component renders AreaAddEdit component without crashing 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="main-div-headerPage"
+      >
+        <div
+          class="div-headerPage"
+        >
+          <button
+            aria-label="button-fazendaAddEdit"
+            class="MuiButton-root MuiButton-contained MuiButton-containedGreen MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root  css-y2u05k-MuiButtonBase-root-MuiButton-root"
+            tabindex="0"
+            type="button"
+          >
+            <span
+              class="MuiButton-startIcon MuiButton-iconSizeMedium css-1d6wzja-MuiButton-startIcon"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
+                />
+              </svg>
+            </span>
+            Voltar
+            <span
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </button>
+          <h6
+            class="MuiTypography-root MuiTypography-h6 MuiTypography-alignCenter css-gozmf5-MuiTypography-root"
+            weight="bold"
+          >
+            Novo - Área
+          </h6>
+          <button
+            class="MuiButton-root MuiButton-contained MuiButton-containedGreen MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root  css-y2u05k-MuiButtonBase-root-MuiButton-root"
+            tabindex="0"
+            type="button"
+          >
+            <span
+              class="MuiButton-startIcon MuiButton-iconSizeMedium css-1d6wzja-MuiButton-startIcon"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"
+                />
+              </svg>
+            </span>
+            Salvar
+            <span
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </button>
+        </div>
+      </div>
+      <form
+        class="boxPage MuiBox-root css-9a2mp0"
+      >
+        <div
+          class="main-div-bodyPage"
+        >
+          <div
+            class="div-typography-bodyPage"
+          >
+            <h6
+              class="MuiTypography-root MuiTypography-h6 MuiTypography-alignLeft css-16rn0ls-MuiTypography-root"
+              weight="bold"
+            >
+              Informações da Área
+            </h6>
+          </div>
+          <div
+            class="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+          >
+            <label
+              class="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-standard MuiFormLabel-root MuiFormLabel-colorPrimary css-aqpgxn-MuiFormLabel-root-MuiInputLabel-root"
+              data-shrink="false"
+              for="IE"
+              id="IE-label"
+            >
+              IE
+            </label>
+            <div
+              class="MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1480iag-MuiInputBase-root-MuiInput-root"
+            >
+              <input
+                aria-invalid="false"
+                class="MuiInput-input MuiInputBase-input css-1x51dt5-MuiInputBase-input-MuiInput-input"
+                id="IE"
+                type="number"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            class="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+          >
+            <label
+              class="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-standard MuiFormLabel-root MuiFormLabel-colorPrimary css-aqpgxn-MuiFormLabel-root-MuiInputLabel-root"
+              data-shrink="false"
+              for="description"
+              id="description-label"
+            >
+              description
+            </label>
+            <div
+              class="MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1480iag-MuiInputBase-root-MuiInput-root"
+            >
+              <input
+                aria-invalid="false"
+                class="MuiInput-input MuiInputBase-input css-1x51dt5-MuiInputBase-input-MuiInput-input"
+                id="description"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            class="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+          >
+            <label
+              class="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-standard MuiFormLabel-root MuiFormLabel-colorPrimary css-aqpgxn-MuiFormLabel-root-MuiInputLabel-root"
+              data-shrink="false"
+              for="erasCode"
+              id="erasCode-label"
+            >
+              erasCode
+            </label>
+            <div
+              class="MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1480iag-MuiInputBase-root-MuiInput-root"
+            >
+              <input
+                aria-invalid="false"
+                class="MuiInput-input MuiInputBase-input css-1x51dt5-MuiInputBase-input-MuiInput-input"
+                id="erasCode"
+                type="number"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            class="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+          >
+            <label
+              class="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-standard MuiFormLabel-root MuiFormLabel-colorPrimary css-aqpgxn-MuiFormLabel-root-MuiInputLabel-root"
+              data-shrink="false"
+              for="establishmentCode"
+              id="establishmentCode-label"
+            >
+              establishmentCode
+            </label>
+            <div
+              class="MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1480iag-MuiInputBase-root-MuiInput-root"
+            >
+              <input
+                aria-invalid="false"
+                class="MuiInput-input MuiInputBase-input css-1x51dt5-MuiInputBase-input-MuiInput-input"
+                id="establishmentCode"
+                type="number"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            class="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+          >
+            <label
+              class="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-standard MuiFormLabel-root MuiFormLabel-colorPrimary css-aqpgxn-MuiFormLabel-root-MuiInputLabel-root"
+              data-shrink="false"
+              for="farmId"
+              id="farmId-label"
+            >
+              farmId
+            </label>
+            <div
+              class="MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1480iag-MuiInputBase-root-MuiInput-root"
+            >
+              <input
+                aria-invalid="false"
+                class="MuiInput-input MuiInputBase-input css-1x51dt5-MuiInputBase-input-MuiInput-input"
+                id="farmId"
+                type="number"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            class="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+          >
+            <label
+              class="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-standard MuiFormLabel-root MuiFormLabel-colorPrimary css-aqpgxn-MuiFormLabel-root-MuiInputLabel-root"
+              data-shrink="false"
+              for="farmType"
+              id="farmType-label"
+            >
+              farmType
+            </label>
+            <div
+              class="MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1480iag-MuiInputBase-root-MuiInput-root"
+            >
+              <input
+                aria-invalid="false"
+                class="MuiInput-input MuiInputBase-input css-1x51dt5-MuiInputBase-input-MuiInput-input"
+                id="farmType"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            class="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+          >
+            <label
+              class="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-standard MuiFormLabel-root MuiFormLabel-colorPrimary css-aqpgxn-MuiFormLabel-root-MuiInputLabel-root"
+              data-shrink="false"
+              for="growerId"
+              id="growerId-label"
+            >
+              growerId
+            </label>
+            <div
+              class="MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1480iag-MuiInputBase-root-MuiInput-root"
+            >
+              <input
+                aria-invalid="false"
+                class="MuiInput-input MuiInputBase-input css-1x51dt5-MuiInputBase-input-MuiInput-input"
+                id="growerId"
+                type="number"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            class="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+          >
+            <label
+              class="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-standard MuiFormLabel-root MuiFormLabel-colorPrimary css-aqpgxn-MuiFormLabel-root-MuiInputLabel-root"
+              data-shrink="false"
+              for="nirfinc"
+              id="nirfinc-label"
+            >
+              nirfinc
+            </label>
+            <div
+              class="MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1480iag-MuiInputBase-root-MuiInput-root"
+            >
+              <input
+                aria-invalid="false"
+                class="MuiInput-input MuiInputBase-input css-1x51dt5-MuiInputBase-input-MuiInput-input"
+                id="nirfinc"
+                type="number"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            class="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+          >
+            <label
+              class="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-standard MuiFormLabel-root MuiFormLabel-colorPrimary css-aqpgxn-MuiFormLabel-root-MuiInputLabel-root"
+              data-shrink="false"
+              for="personalIdentifier"
+              id="personalIdentifier-label"
+            >
+              personalIdentifier
+            </label>
+            <div
+              class="MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1480iag-MuiInputBase-root-MuiInput-root"
+            >
+              <input
+                aria-invalid="false"
+                class="MuiInput-input MuiInputBase-input css-1x51dt5-MuiInputBase-input-MuiInput-input"
+                id="personalIdentifier"
+                type="number"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            class="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+          >
+            <label
+              class="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-standard MuiFormLabel-root MuiFormLabel-colorPrimary MuiFormLabel-filled css-1c2i806-MuiFormLabel-root-MuiInputLabel-root"
+              data-shrink="true"
+              for="status"
+              id="status-label"
+            >
+              status
+            </label>
+            <div
+              class="MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1480iag-MuiInputBase-root-MuiInput-root"
+            >
+              <div
+                aria-expanded="false"
+                aria-haspopup="listbox"
+                aria-labelledby="status-label status"
+                class="MuiSelect-select MuiSelect-standard MuiInput-input MuiInputBase-input css-1rxz5jq-MuiSelect-select-MuiInputBase-input-MuiInput-input"
+                id="status"
+                role="button"
+                tabindex="0"
+              >
+                Ativo
+              </div>
+              <input
+                aria-hidden="true"
+                class="MuiSelect-nativeInput css-yf8vq0-MuiSelect-nativeInput"
+                data-testid="mui-field"
+                tabindex="-1"
+                value="1"
+              />
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconStandard css-pqjvzy-MuiSvgIcon-root-MuiSelect-icon"
+                data-testid="ArrowDropDownIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M7 10l5 5 5-5z"
+                />
+              </svg>
+            </div>
+          </div>
+          <div
+            class="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+          >
+            <label
+              class="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-standard MuiFormLabel-root MuiFormLabel-colorPrimary MuiFormLabel-filled css-1c2i806-MuiFormLabel-root-MuiInputLabel-root"
+              data-shrink="true"
+              for="tracked"
+              id="tracked-label"
+            >
+              tracked
+            </label>
+            <div
+              class="MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1480iag-MuiInputBase-root-MuiInput-root"
+            >
+              <div
+                aria-expanded="false"
+                aria-haspopup="listbox"
+                aria-labelledby="tracked-label tracked"
+                class="MuiSelect-select MuiSelect-standard MuiInput-input MuiInputBase-input css-1rxz5jq-MuiSelect-select-MuiInputBase-input-MuiInput-input"
+                id="tracked"
+                role="button"
+                tabindex="0"
+              >
+                Ativo
+              </div>
+              <input
+                aria-hidden="true"
+                class="MuiSelect-nativeInput css-yf8vq0-MuiSelect-nativeInput"
+                data-testid="mui-field"
+                tabindex="-1"
+                value="1"
+              />
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconStandard css-pqjvzy-MuiSvgIcon-root-MuiSelect-icon"
+                data-testid="ArrowDropDownIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M7 10l5 5 5-5z"
+                />
+              </svg>
+            </div>
+          </div>
+          <div
+            class="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+          >
+            <label
+              class="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-standard MuiFormLabel-root MuiFormLabel-colorPrimary css-aqpgxn-MuiFormLabel-root-MuiInputLabel-root"
+              data-shrink="false"
+              for="_id"
+              id="_id-label"
+            >
+              _id
+            </label>
+            <div
+              class="MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1480iag-MuiInputBase-root-MuiInput-root"
+            >
+              <input
+                aria-invalid="false"
+                class="MuiInput-input MuiInputBase-input css-1x51dt5-MuiInputBase-input-MuiInput-input"
+                id="_id"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="main-div-headerPage"
+    >
+      <div
+        class="div-headerPage"
+      >
+        <button
+          aria-label="button-fazendaAddEdit"
+          class="MuiButton-root MuiButton-contained MuiButton-containedGreen MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root  css-y2u05k-MuiButtonBase-root-MuiButton-root"
+          tabindex="0"
+          type="button"
+        >
+          <span
+            class="MuiButton-startIcon MuiButton-iconSizeMedium css-1d6wzja-MuiButton-startIcon"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
+              />
+            </svg>
+          </span>
+          Voltar
+          <span
+            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </button>
+        <h6
+          class="MuiTypography-root MuiTypography-h6 MuiTypography-alignCenter css-gozmf5-MuiTypography-root"
+          weight="bold"
+        >
+          Novo - Área
+        </h6>
+        <button
+          class="MuiButton-root MuiButton-contained MuiButton-containedGreen MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root  css-y2u05k-MuiButtonBase-root-MuiButton-root"
+          tabindex="0"
+          type="button"
+        >
+          <span
+            class="MuiButton-startIcon MuiButton-iconSizeMedium css-1d6wzja-MuiButton-startIcon"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"
+              />
+            </svg>
+          </span>
+          Salvar
+          <span
+            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+    </div>
+    <form
+      class="boxPage MuiBox-root css-9a2mp0"
+    >
+      <div
+        class="main-div-bodyPage"
+      >
+        <div
+          class="div-typography-bodyPage"
+        >
+          <h6
+            class="MuiTypography-root MuiTypography-h6 MuiTypography-alignLeft css-16rn0ls-MuiTypography-root"
+            weight="bold"
+          >
+            Informações da Área
+          </h6>
+        </div>
+        <div
+          class="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+        >
+          <label
+            class="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-standard MuiFormLabel-root MuiFormLabel-colorPrimary css-aqpgxn-MuiFormLabel-root-MuiInputLabel-root"
+            data-shrink="false"
+            for="IE"
+            id="IE-label"
+          >
+            IE
+          </label>
+          <div
+            class="MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1480iag-MuiInputBase-root-MuiInput-root"
+          >
+            <input
+              aria-invalid="false"
+              class="MuiInput-input MuiInputBase-input css-1x51dt5-MuiInputBase-input-MuiInput-input"
+              id="IE"
+              type="number"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+        >
+          <label
+            class="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-standard MuiFormLabel-root MuiFormLabel-colorPrimary css-aqpgxn-MuiFormLabel-root-MuiInputLabel-root"
+            data-shrink="false"
+            for="description"
+            id="description-label"
+          >
+            description
+          </label>
+          <div
+            class="MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1480iag-MuiInputBase-root-MuiInput-root"
+          >
+            <input
+              aria-invalid="false"
+              class="MuiInput-input MuiInputBase-input css-1x51dt5-MuiInputBase-input-MuiInput-input"
+              id="description"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+        >
+          <label
+            class="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-standard MuiFormLabel-root MuiFormLabel-colorPrimary css-aqpgxn-MuiFormLabel-root-MuiInputLabel-root"
+            data-shrink="false"
+            for="erasCode"
+            id="erasCode-label"
+          >
+            erasCode
+          </label>
+          <div
+            class="MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1480iag-MuiInputBase-root-MuiInput-root"
+          >
+            <input
+              aria-invalid="false"
+              class="MuiInput-input MuiInputBase-input css-1x51dt5-MuiInputBase-input-MuiInput-input"
+              id="erasCode"
+              type="number"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+        >
+          <label
+            class="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-standard MuiFormLabel-root MuiFormLabel-colorPrimary css-aqpgxn-MuiFormLabel-root-MuiInputLabel-root"
+            data-shrink="false"
+            for="establishmentCode"
+            id="establishmentCode-label"
+          >
+            establishmentCode
+          </label>
+          <div
+            class="MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1480iag-MuiInputBase-root-MuiInput-root"
+          >
+            <input
+              aria-invalid="false"
+              class="MuiInput-input MuiInputBase-input css-1x51dt5-MuiInputBase-input-MuiInput-input"
+              id="establishmentCode"
+              type="number"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+        >
+          <label
+            class="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-standard MuiFormLabel-root MuiFormLabel-colorPrimary css-aqpgxn-MuiFormLabel-root-MuiInputLabel-root"
+            data-shrink="false"
+            for="farmId"
+            id="farmId-label"
+          >
+            farmId
+          </label>
+          <div
+            class="MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1480iag-MuiInputBase-root-MuiInput-root"
+          >
+            <input
+              aria-invalid="false"
+              class="MuiInput-input MuiInputBase-input css-1x51dt5-MuiInputBase-input-MuiInput-input"
+              id="farmId"
+              type="number"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+        >
+          <label
+            class="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-standard MuiFormLabel-root MuiFormLabel-colorPrimary css-aqpgxn-MuiFormLabel-root-MuiInputLabel-root"
+            data-shrink="false"
+            for="farmType"
+            id="farmType-label"
+          >
+            farmType
+          </label>
+          <div
+            class="MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1480iag-MuiInputBase-root-MuiInput-root"
+          >
+            <input
+              aria-invalid="false"
+              class="MuiInput-input MuiInputBase-input css-1x51dt5-MuiInputBase-input-MuiInput-input"
+              id="farmType"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+        >
+          <label
+            class="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-standard MuiFormLabel-root MuiFormLabel-colorPrimary css-aqpgxn-MuiFormLabel-root-MuiInputLabel-root"
+            data-shrink="false"
+            for="growerId"
+            id="growerId-label"
+          >
+            growerId
+          </label>
+          <div
+            class="MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1480iag-MuiInputBase-root-MuiInput-root"
+          >
+            <input
+              aria-invalid="false"
+              class="MuiInput-input MuiInputBase-input css-1x51dt5-MuiInputBase-input-MuiInput-input"
+              id="growerId"
+              type="number"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+        >
+          <label
+            class="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-standard MuiFormLabel-root MuiFormLabel-colorPrimary css-aqpgxn-MuiFormLabel-root-MuiInputLabel-root"
+            data-shrink="false"
+            for="nirfinc"
+            id="nirfinc-label"
+          >
+            nirfinc
+          </label>
+          <div
+            class="MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1480iag-MuiInputBase-root-MuiInput-root"
+          >
+            <input
+              aria-invalid="false"
+              class="MuiInput-input MuiInputBase-input css-1x51dt5-MuiInputBase-input-MuiInput-input"
+              id="nirfinc"
+              type="number"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+        >
+          <label
+            class="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-standard MuiFormLabel-root MuiFormLabel-colorPrimary css-aqpgxn-MuiFormLabel-root-MuiInputLabel-root"
+            data-shrink="false"
+            for="personalIdentifier"
+            id="personalIdentifier-label"
+          >
+            personalIdentifier
+          </label>
+          <div
+            class="MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1480iag-MuiInputBase-root-MuiInput-root"
+          >
+            <input
+              aria-invalid="false"
+              class="MuiInput-input MuiInputBase-input css-1x51dt5-MuiInputBase-input-MuiInput-input"
+              id="personalIdentifier"
+              type="number"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+        >
+          <label
+            class="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-standard MuiFormLabel-root MuiFormLabel-colorPrimary MuiFormLabel-filled css-1c2i806-MuiFormLabel-root-MuiInputLabel-root"
+            data-shrink="true"
+            for="status"
+            id="status-label"
+          >
+            status
+          </label>
+          <div
+            class="MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1480iag-MuiInputBase-root-MuiInput-root"
+          >
+            <div
+              aria-expanded="false"
+              aria-haspopup="listbox"
+              aria-labelledby="status-label status"
+              class="MuiSelect-select MuiSelect-standard MuiInput-input MuiInputBase-input css-1rxz5jq-MuiSelect-select-MuiInputBase-input-MuiInput-input"
+              id="status"
+              role="button"
+              tabindex="0"
+            >
+              Ativo
+            </div>
+            <input
+              aria-hidden="true"
+              class="MuiSelect-nativeInput css-yf8vq0-MuiSelect-nativeInput"
+              data-testid="mui-field"
+              tabindex="-1"
+              value="1"
+            />
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconStandard css-pqjvzy-MuiSvgIcon-root-MuiSelect-icon"
+              data-testid="ArrowDropDownIcon"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M7 10l5 5 5-5z"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          class="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+        >
+          <label
+            class="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-standard MuiFormLabel-root MuiFormLabel-colorPrimary MuiFormLabel-filled css-1c2i806-MuiFormLabel-root-MuiInputLabel-root"
+            data-shrink="true"
+            for="tracked"
+            id="tracked-label"
+          >
+            tracked
+          </label>
+          <div
+            class="MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1480iag-MuiInputBase-root-MuiInput-root"
+          >
+            <div
+              aria-expanded="false"
+              aria-haspopup="listbox"
+              aria-labelledby="tracked-label tracked"
+              class="MuiSelect-select MuiSelect-standard MuiInput-input MuiInputBase-input css-1rxz5jq-MuiSelect-select-MuiInputBase-input-MuiInput-input"
+              id="tracked"
+              role="button"
+              tabindex="0"
+            >
+              Ativo
+            </div>
+            <input
+              aria-hidden="true"
+              class="MuiSelect-nativeInput css-yf8vq0-MuiSelect-nativeInput"
+              data-testid="mui-field"
+              tabindex="-1"
+              value="1"
+            />
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconStandard css-pqjvzy-MuiSvgIcon-root-MuiSelect-icon"
+              data-testid="ArrowDropDownIcon"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M7 10l5 5 5-5z"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          class="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+        >
+          <label
+            class="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-standard MuiFormLabel-root MuiFormLabel-colorPrimary css-aqpgxn-MuiFormLabel-root-MuiInputLabel-root"
+            data-shrink="false"
+            for="_id"
+            id="_id-label"
+          >
+            _id
+          </label>
+          <div
+            class="MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1480iag-MuiInputBase-root-MuiInput-root"
+          >
+            <input
+              aria-invalid="false"
+              class="MuiInput-input MuiInputBase-input css-1x51dt5-MuiInputBase-input-MuiInput-input"
+              id="_id"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

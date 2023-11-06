@@ -4,6 +4,12 @@ import { Injectable } from '@nestjs/common';
 export abstract class GenericFactory <T> {
     constructor() {}
 
-	abstract create(value: object): T;
+	abstract create(value: string): T;
  
+}
+
+export enum verbs {
+    post,
+    put,
+    del
 }

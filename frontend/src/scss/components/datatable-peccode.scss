@@ -1,0 +1,39 @@
+.headerPage {
+    display: flex; 
+    flex-direction: row; 
+    padding: 10px;  
+    background-color: #8ea637;
+}
+
+.subtitleTable {
+    display: flex; 
+    flex-direction: row; 
+    padding: 10px;  
+    justify-content: space-between;
+    width: 50%;
+}
+
+.div-typography-headerPage {
+    width: 60%;
+}
+
+.MuiTypography-h6 {
+    color: white;
+}
+
+.listIcon-headerPage { 
+    vertical-align: middle;
+}
+
+.div-button-headerPage {
+    width: 40%; 
+    text-align: right;
+}
+
+.button-headerPage {
+    text-transform: none;
+}
+
+.div-stickyHeadTable {
+    padding: 20px;
+}
